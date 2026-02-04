@@ -2273,10 +2273,15 @@ color: #3FA6A0 !important;
     margin-top: 0;
     padding-top: 0; }
 
-    .features article {
-  border-bottom: none !important;
+    #footer {
+  text-align: center;
+  padding: 2em 1em;
+  font-size: 0.85em;
+  color: rgba(155, 115, 115, 0.6); /* ajusta si tu fondo es claro */
 }
 
-.features article::after {
-  display: none !important;
+#footer .legal-footer {
+  margin: 0 auto;
+  max-width: 900px;
+  line-height: 1.6;
 }
