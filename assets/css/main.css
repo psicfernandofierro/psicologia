@@ -2273,4 +2273,10 @@ color: #3FA6A0 !important;
     margin-top: 0;
     padding-top: 0; }
 
-    
+    .features article {
+  border-bottom: none !important;
+}
+
+.features article::after {
+  display: none !important;
+}
