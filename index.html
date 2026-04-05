@@ -187,6 +187,13 @@
 
 
 										<article>
+											<a href="herida_paterna.html" class="image">
+											<img src="images/art3.jpg" alt="" />
+											</a>
+
+											 
+
+<article>
 	<a href="herida_paterna.html" class="image">
 		<img src="images/art3.jpg" alt="" />
 	</a>
@@ -199,15 +206,29 @@
 
 	<ul class="actions">
 		<li><a href="herida_paterna.html" class="button">Leer más</a></li>
-		
-		<!-- BOTÓN COMPARTIR -->
-		<li>
-			<a href="#" onclick="compartir()" class="button small">
-				🔗 Compartir
-			</a>
-		</li>
+		<li><button class="button" onclick="compartirArticulo()">Compartir</button></li>
 	</ul>
 </article>
+
+<script>
+async function compartirArticulo() {
+	const data = {
+		title: "Herida Paterna en mujeres",
+		text: "La herida paterna no define a una mujer, pero sí puede condicionar la forma en que ama, elige y sostiene vínculos.",
+		url: "https://tusitio.com/herida_paterna.html"
+	};
+
+	try {
+		if (navigator.share) {
+			await navigator.share(data);
+		} else {
+			alert("Tu navegador no permite el menú nativo de compartir.");
+		}
+	} catch (error) {
+		console.log("Compartir cancelado o no disponible", error);
+	}
+}
+</script>
 
 <!--
 
