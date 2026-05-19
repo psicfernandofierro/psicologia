@@ -229,8 +229,14 @@
               </div>
 
               <div class="full">
-  <label>Imagen de firma del paciente</label>
-  <input type="file" id="firmaInput" accept="image/*" required>
+  <label>Suba una fotografía de la firma o documento del paciente</label>
+<input 
+  type="file" 
+  id="firmaInput" 
+  accept="image/*"
+  capture="environment"
+  required
+>
 
   <div class="firma-preview" id="firmaPreview">
     Aquí aparecerá la vista previa de la firma.
