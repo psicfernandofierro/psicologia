@@ -1,0 +1,396 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <title>Consentimiento Informado | Psic. Fernando Fierro</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <link rel="stylesheet" href="assets/css/main.css" />
+
+  <style>
+    .consent-box {
+      background: #fff;
+      border: 1px solid rgba(210, 215, 217, 0.75);
+      border-radius: 10px;
+      padding: 2rem;
+      margin-top: 2rem;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.05);
+    }
+
+    .consent-header {
+      border-left: 5px solid #8a6f56;
+      padding-left: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    .consent-header h1 {
+      margin-bottom: 0.4rem;
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1rem;
+    }
+
+    .form-grid .full {
+      grid-column: 1 / -1;
+    }
+
+    label {
+      font-weight: 600;
+      margin-bottom: 0.3rem;
+      display: block;
+    }
+
+    input, select, textarea {
+      width: 100%;
+    }
+
+    textarea {
+      min-height: 110px;
+    }
+
+    .firma-preview {
+      border: 2px dashed #ccc;
+      border-radius: 8px;
+      padding: 1rem;
+      min-height: 130px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #777;
+      background: #fafafa;
+      text-align: center;
+    }
+
+    .firma-preview img {
+      max-width: 100%;
+      max-height: 140px;
+    }
+
+    .mensaje-exito {
+      display: none;
+      padding: 1rem;
+      border-radius: 8px;
+      background: #e9f7ef;
+      color: #1e6b3a;
+      font-weight: 700;
+      margin-top: 1rem;
+      text-align: center;
+    }
+
+    .mensaje-error {
+      display: none;
+      padding: 1rem;
+      border-radius: 8px;
+      background: #fdecea;
+      color: #8a1f11;
+      font-weight: 700;
+      margin-top: 1rem;
+      text-align: center;
+    }
+
+    @media screen and (max-width: 736px) {
+      .form-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .consent-box {
+        padding: 1.3rem;
+      }
+    }
+  </style>
+</head>
+
+<body class="is-preload">
+
+<div id="wrapper">
+
+  <div id="main">
+    <div class="inner">
+
+      <header id="header">
+        <a href="index.html" class="logo">
+          <strong>Psicología | Adicciones | Reconstrucción</strong>
+        </a>
+
+        <ul class="icons">
+          <li>
+            <a href="https://www.tiktok.com/@psic.fernandofierro" class="icon brands fa-tiktok" target="_blank" rel="noopener noreferrer">
+              <span class="label">TikTok</span>
+            </a>
+          </li>
+          <li>
+            <a href="https://soundcloud.com/psic-fernando-fierro" class="icon brands fa-soundcloud" target="_blank" rel="noopener noreferrer">
+              <span class="label">SoundCloud</span>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.instagram.com/psic.fernandofierro/" class="icon brands fa-instagram" target="_blank" rel="noopener noreferrer">
+              <span class="label">Instagram</span>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.facebook.com/psicfernandofierro/" class="icon brands fa-facebook-f" target="_blank" rel="noopener noreferrer">
+              <span class="label">Facebook</span>
+            </a>
+          </li>
+          <li>
+            <a href="mailto:psicfernandofierro@gmail.com" class="icon solid fa-envelope">
+              <span class="label">Email</span>
+            </a>
+          </li>
+        </ul>
+      </header>
+
+      <section>
+        <div class="consent-box">
+          <div class="consent-header">
+            <h1>Consentimiento informado</h1>
+            <p>
+              K-ALMA · Atención Psicológica<br>
+              <strong>Psic. Fernando Fierro</strong><br>
+              Registro SENESCYT: 1031-2023-2796213<br>
+              Don Bosco y Bartolomé Ruiz · Cuenca, Ecuador
+            </p>
+          </div>
+
+          <p>
+            Este formulario permite registrar la aceptación voluntaria del consentimiento informado
+            para el proceso de atención psicológica. La información enviada será recibida por el profesional
+            para generar el documento correspondiente.
+          </p>
+
+          <hr>
+
+          <form id="consentForm">
+            <div class="form-grid">
+
+              <div>
+                <label>Nombre completo</label>
+                <input type="text" name="nombre" required>
+              </div>
+
+              <div>
+                <label>Cédula / ID / Pasaporte</label>
+                <input type="text" name="identificacion" required>
+              </div>
+
+              <div>
+                <label>Teléfono</label>
+                <input type="text" name="telefono" required>
+              </div>
+
+              <div>
+                <label>Correo electrónico</label>
+                <input type="email" name="correo" required>
+              </div>
+
+              <div>
+                <label>Modalidad de atención</label>
+                <select name="modalidad" required>
+                  <option value="">Seleccione una opción</option>
+                  <option>Presencial</option>
+                  <option>Virtual</option>
+                  <option>Mixta</option>
+                </select>
+              </div>
+
+              <div>
+                <label>Tipo de servicio</label>
+                <select name="servicio" required>
+                  <option value="">Seleccione una opción</option>
+                  <option>Acompañamiento psicológico</option>
+                  <option>Orientación emocional</option>
+                  <option>Psicoeducación</option>
+                  <option>Regulación emocional</option>
+                  <option>Prevención de adicciones</option>
+                  <option>Atención individual</option>
+                  <option>Atención familiar</option>
+                  <option>Talleres y capacitación</option>
+                  <option>Otro</option>
+                </select>
+              </div>
+
+              <div>
+                <label>Valor por sesión</label>
+                <input type="text" name="valor" placeholder="$">
+              </div>
+
+              <div>
+                <label>Forma de pago</label>
+                <select name="pago">
+                  <option value="">Seleccione una opción</option>
+                  <option>Efectivo</option>
+                  <option>Transferencia</option>
+                  <option>Depósito</option>
+                  <option>Otro</option>
+                </select>
+              </div>
+
+              <div class="full">
+                <label>Observaciones o acuerdos específicos</label>
+                <textarea name="observaciones" placeholder="Ejemplo: acuerdos de cancelación, modalidad, frecuencia de sesiones, etc."></textarea>
+              </div>
+
+              <div class="full">
+                <label>Imagen de firma del paciente</label>
+                <input type="file" id="firmaInput" accept="image/*" required>
+                <div class="firma-preview" id="firmaPreview">
+                  Aquí aparecerá la vista previa de la firma.
+                </div>
+              </div>
+
+              <div class="full">
+                <label>
+                  <input type="checkbox" name="acepta" required style="width:auto; margin-right:8px;">
+                  Declaro que he leído, comprendido y acepto el consentimiento informado para atención psicológica.
+                </label>
+              </div>
+
+            </div>
+
+            <ul class="actions" style="margin-top: 2rem;">
+              <li>
+                <button type="submit" class="button primary" id="btnEnviar">
+                  Finalizar
+                </button>
+              </li>
+            </ul>
+          </form>
+
+          <div id="mensajeExito" class="mensaje-exito">
+            Consentimiento ingresado con éxito.
+          </div>
+
+          <div id="mensajeError" class="mensaje-error">
+            Ocurrió un problema al enviar el consentimiento. Intente nuevamente.
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </div>
+
+  <div id="sidebar">
+    <div class="inner">
+
+      <nav id="menu">
+        <header class="major">
+          <h2>Explorar Contenidos</h2>
+        </header>
+        <ul>
+          <li><a href="index.html">INICIO</a></li>
+          <li><a href="kalma.html">K-ALMA CONSULTORIO PSICOLÓGICO</a></li>
+          <li><a href="adicciones_sin_maquillaje.html">ADICCIONES SIN MAQUILLAJE</a></li>
+          <li><a href="podcast.html">PODCAST REN-HACER</a></li>
+          <li><a href="books_links.html">BIBLIOTECA</a></li>
+        </ul>
+      </nav>
+
+      <section class="alt">
+        <header class="major">
+          <h2>Contacto</h2>
+        </header>
+        <ul class="contact">
+          <li class="icon brands fa-whatsapp">
+            <a href="https://wa.me/593998080623?text=Hola,%20quiero%20orientación." target="_blank" rel="noopener noreferrer">
+              Cita rápida por WhatsApp
+            </a>
+          </li>
+          <li class="icon solid fa-envelope">
+            <a href="mailto:psicfernandofierro@gmail.com?subject=Quiero%20orientación">
+              psicfernandofierro@gmail.com
+            </a>
+          </li>
+          <li class="icon solid fa-map-marker-alt">
+            Atención presencial en Cuenca, Ecuador
+          </li>
+        </ul>
+      </section>
+
+    </div>
+  </div>
+
+</div>
+
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/browser.min.js"></script>
+<script src="assets/js/breakpoints.min.js"></script>
+<script src="assets/js/util.js"></script>
+<script src="assets/js/main.js"></script>
+
+<script>
+  const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbytUWvsRkM_y4kzQ6INQe9tdD_Hc8l0sXNIpsBkRp2Y7WaQ9UcjfarERS8XrKL_vzzIvg/exec";
+
+  let firmaBase64 = "";
+
+  const firmaInput = document.getElementById("firmaInput");
+  const firmaPreview = document.getElementById("firmaPreview");
+  const form = document.getElementById("consentForm");
+  const mensajeExito = document.getElementById("mensajeExito");
+  const mensajeError = document.getElementById("mensajeError");
+  const btnEnviar = document.getElementById("btnEnviar");
+
+  firmaInput.addEventListener("change", function (e) {
+    const file = e.target.files[0];
+
+    if (!file) return;
+
+    const reader = new FileReader();
+
+    reader.onload = function () {
+      firmaBase64 = reader.result;
+      firmaPreview.innerHTML = `<img src="${firmaBase64}" alt="Firma del paciente">`;
+    };
+
+    reader.readAsDataURL(file);
+  });
+
+  form.addEventListener("submit", async function (e) {
+    e.preventDefault();
+
+    mensajeExito.style.display = "none";
+    mensajeError.style.display = "none";
+
+    if (!firmaBase64) {
+      alert("Por favor, suba una imagen de su firma.");
+      return;
+    }
+
+    btnEnviar.disabled = true;
+    btnEnviar.textContent = "Enviando...";
+
+    const formData = new FormData(form);
+    const data = Object.fromEntries(formData.entries());
+
+    data.fecha = new Date().toLocaleString("es-EC");
+    data.firmaImagen = firmaBase64;
+
+    try {
+      await fetch(APPS_SCRIPT_URL, {
+        method: "POST",
+        mode: "no-cors",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(data)
+      });
+
+      mensajeExito.style.display = "block";
+      form.reset();
+      firmaBase64 = "";
+      firmaPreview.innerHTML = "Aquí aparecerá la vista previa de la firma.";
+
+    } catch (error) {
+      console.error(error);
+      mensajeError.style.display = "block";
+    } finally {
+      btnEnviar.disabled = false;
+      btnEnviar.textContent = "Finalizar";
+    }
+  });
+</script>
+
+</body>
+</html>
