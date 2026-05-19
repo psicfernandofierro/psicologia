@@ -2285,3 +2285,22 @@ color: #3FA6A0 !important;
   max-width: 900px;
   line-height: 1.6;
 }
+
+.check-consent {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.check-consent input[type="checkbox"] {
+  appearance: checkbox !important;
+  -webkit-appearance: checkbox !important;
+  width: 22px !important;
+  height: 22px !important;
+  margin-top: 4px;
+  opacity: 1 !important;
+  position: static !important;
+  display: inline-block !important;
+}

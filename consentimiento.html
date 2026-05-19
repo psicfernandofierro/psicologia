@@ -234,19 +234,13 @@
               </div>
 
               <div class="full">
-                <label>Imagen de firma del paciente</label>
-                <input type="file" id="firmaInput" accept="image/*" required>
-                <div class="firma-preview" id="firmaPreview">
-                  Aquí aparecerá la vista previa de la firma.
-                </div>
-              </div>
-
-              <div class="full">
-                <label>
-                  <input type="checkbox" name="acepta" required style="width:auto; margin-right:8px;">
-                  Declaro que he leído, comprendido y acepto el consentimiento informado para atención psicológica.
-                </label>
-              </div>
+  <label class="check-consent">
+    <input type="checkbox" name="acepta" required>
+    <span>
+      Declaro que he leído, comprendido y acepto el consentimiento informado para atención psicológica.
+    </span>
+  </label>
+</div>
 
             </div>
 
@@ -320,14 +314,15 @@
 <script src="assets/js/util.js"></script>
 <script src="assets/js/main.js"></script>
 
-<script>
-  const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbytUWvsRkM_y4kzQ6INQe9tdD_Hc8l0sXNIpsBkRp2Y7WaQ9UcjfarERS8XrKL_vzzIvg/exec";
+ <script>
+const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbytUWvsRkM_y4kzQ6INQe9tdD_Hc8l0sXNIpsBkRp2Y7WaQ9UcjfarERS8XrKL_vzzIvg/exec";
 
-  let firmaBase64 = "";
+let firmaBase64 = "";
 
+document.addEventListener("DOMContentLoaded", function () {
+  const form = document.getElementById("consentForm");
   const firmaInput = document.getElementById("firmaInput");
   const firmaPreview = document.getElementById("firmaPreview");
-  const form = document.getElementById("consentForm");
   const mensajeExito = document.getElementById("mensajeExito");
   const mensajeError = document.getElementById("mensajeError");
   const btnEnviar = document.getElementById("btnEnviar");
@@ -347,7 +342,7 @@
     reader.readAsDataURL(file);
   });
 
-  form.addEventListener("submit", async function (e) {
+  form.addEventListener("submit", function (e) {
     e.preventDefault();
 
     mensajeExito.style.display = "none";
@@ -367,29 +362,27 @@
     data.fecha = new Date().toLocaleString("es-EC");
     data.firmaImagen = firmaBase64;
 
-    try {
-      await fetch(APPS_SCRIPT_URL, {
-        method: "POST",
-        mode: "no-cors",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify(data)
-      });
-
+    fetch(APPS_SCRIPT_URL, {
+      method: "POST",
+      mode: "no-cors",
+      body: JSON.stringify(data)
+    })
+    .then(() => {
       mensajeExito.style.display = "block";
       form.reset();
       firmaBase64 = "";
       firmaPreview.innerHTML = "Aquí aparecerá la vista previa de la firma.";
-
-    } catch (error) {
-      console.error(error);
+    })
+    .catch((error) => {
+      console.error("Error:", error);
       mensajeError.style.display = "block";
-    } finally {
+    })
+    .finally(() => {
       btnEnviar.disabled = false;
       btnEnviar.textContent = "Finalizar";
-    }
+    });
   });
+});
 </script>
 
 </body>
