@@ -229,17 +229,51 @@
               </div>
 
               <div class="full">
-                <label>Observaciones o acuerdos específicos</label>
-                <textarea name="observaciones" placeholder="Ejemplo: acuerdos de cancelación, modalidad, frecuencia de sesiones, etc."></textarea>
-              </div>
+  <label>Imagen de firma del paciente</label>
+  <input type="file" id="firmaInput" accept="image/*" required>
 
-              <div class="full">
-  <label class="check-consent">
-    <input type="checkbox" name="acepta" required>
-    <span>
-      Declaro que he leído, comprendido y acepto el consentimiento informado para atención psicológica.
-    </span>
-  </label>
+  <div class="firma-preview" id="firmaPreview">
+    Aquí aparecerá la vista previa de la firma.
+  </div>
+</div>
+
+<div class="full">
+
+  <div style="
+    border:1px solid #d6d6d6;
+    border-radius:10px;
+    padding:18px;
+    background:#fafafa;
+  ">
+
+    <label style="
+      display:flex;
+      align-items:flex-start;
+      gap:12px;
+      cursor:pointer;
+      margin:0;
+    ">
+
+      <input 
+        type="checkbox" 
+        name="acepta" 
+        required
+        style="
+          width:22px;
+          height:22px;
+          margin-top:2px;
+          cursor:pointer;
+        "
+      >
+
+      <span style="line-height:1.6;">
+         Declaro    que he leído, comprendido y acepto el consentimiento informado para atención psicológica.
+      </span>
+
+    </label>
+
+  </div>
+
 </div>
 
             </div>
